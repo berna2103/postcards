@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { supabase } from "@/lib/supabase";
 import { redirect } from "next/navigation";
 import Image from "next/image";
@@ -39,13 +41,13 @@ export default async function TrackingPage({
   const mailtoUrl = `mailto:bernardo.jimenez@realtyofamerica.com?subject=${emailSubject}&body=${emailBody}`;
 
   // --- Enticing Text Message Logic ---
-  // Note: Use & on iOS and ? on some Androids for body, but & is a safe modern bet
   const smsBody = encodeURIComponent(
     `Hi Bernardo, this is ${firstName}. I just scanned your card for ${prospect.address}. Can you send me my property report?`,
   );
   const smsUrl = `sms:7083140477&body=${smsBody}`;
 
   const cloudCmaUrl = `https://app.cloudcma.com/api_widget/aa79d94dc9b4bf80cd34ae3f7560d5c8/show?address=${encodedAddress}`;
+
   return (
     <main className="min-h-screen bg-[#F1F5F9] flex flex-col items-center justify-center p-4 antialiased selection:bg-blue-100">
       {/* Background Accent */}
@@ -122,7 +124,7 @@ export default async function TrackingPage({
                 />
               </a>
 
-              {/* NEW: Text Message Action - Highly Enticing */}
+              {/* Text Message Action */}
               <a
                 href={smsUrl}
                 className="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 px-8 rounded-2xl transition-all shadow-lg"
@@ -148,7 +150,6 @@ export default async function TrackingPage({
               >
                 <Phone size={20} /> Call
               </a>
-              {/* Pre-populated Email Button */}
               <a
                 href={mailtoUrl}
                 className="flex flex-col items-center gap-2 text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-blue-600 transition-all"
