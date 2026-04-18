@@ -1,0 +1,16 @@
+# Data Processing
+pandas
+
+# Drawing & Plotter Logic
+vsketch
+numpy
+matplotlib
+
+# QR Code Generation
+qrcode
+
+# AI / Ollama Interaction
+requests
+
+# Database Sync
+supabase
