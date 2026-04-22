@@ -46,7 +46,7 @@ export default async function TrackingPage({
   );
   const smsUrl = `sms:7083140477&body=${smsBody}`;
 
-  const cloudCmaUrl = `https://app.cloudcma.com/api_widget/aa79d94dc9b4bf80cd34ae3f7560d5c8/show?address=${encodedAddress}`;
+  const cloudCmaUrl = `https://bernardojimenez.realscout.com/homesearch/home-reports?address=${encodedAddress}`;
 
   return (
     <main className="min-h-screen bg-[#F1F5F9] flex flex-col items-center justify-center p-4 antialiased selection:bg-blue-100">
